@@ -5,3 +5,4 @@ pydantic
 langsmith
 google-generativeai
 pypdf
+sentence-transformers
