@@ -1,6 +1,7 @@
 langchain
 langchain-community
 streamlit
-wxai_langchain
+pydantic
+langsmith
 google-generativeai
 pypdf
