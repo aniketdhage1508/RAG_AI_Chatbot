@@ -104,7 +104,7 @@ prompt = st.chat_input('Pass Your Prompt here')
 system_prompt = "You are an AI chatbot trained to answer questions in the healthcare domain based on relevant context. If the question is out of the healthcare domain, respond with relevant context but indicate subtly: ***>>>NOTE: THIS QUESTION MIGHT BE OUT OF MY DOMAIN!<<<***\n"
 
 # If the user hits enter then
-if prompt or uploaded_pdf:
+if prompt:
     # Display the prompt
     st.chat_message('user').markdown(prompt)
     # Store the user prompt in state
