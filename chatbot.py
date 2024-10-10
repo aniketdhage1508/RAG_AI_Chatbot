@@ -82,23 +82,23 @@ for message in st.session_state.messages:
 prompt = st.chat_input('Pass Your Prompt here')
 
 # Add a PDF upload option
-uploaded_pdf = st.file_uploader("Upload a PDF", type=["pdf"])
+# uploaded_pdf = st.file_uploader("Upload a PDF", type=["pdf"])
 
 # If the user uploads a PDF
-if uploaded_pdf:
-    # Save the uploaded PDF to a temporary file
-    with tempfile.NamedTemporaryFile(delete=False, suffix=".pdf") as temp_file:
-        temp_file.write(uploaded_pdf.read())
-        temp_file_path = temp_file.name
+# if uploaded_pdf:
+#     # Save the uploaded PDF to a temporary file
+#     with tempfile.NamedTemporaryFile(delete=False, suffix=".pdf") as temp_file:
+#         temp_file.write(uploaded_pdf.read())
+#         temp_file_path = temp_file.name
     
-    # Load the PDF using the temporary file path
-    pdf_loader = PyPDFLoader(temp_file_path)
+#     # Load the PDF using the temporary file path
+#     pdf_loader = PyPDFLoader(temp_file_path)
     
     # Rebuild the index with the uploaded PDF
-    index = VectorstoreIndexCreator(
-        embedding=HuggingFaceEmbeddings(model_name='all-MiniLM-L12-v2'),
-        text_splitter=RecursiveCharacterTextSplitter(chunk_size=100, chunk_overlap=15)
-    ).from_loaders([pdf_loader])
+# index = VectorstoreIndexCreator(
+#         embedding=HuggingFaceEmbeddings(model_name='all-MiniLM-L12-v2'),
+#         text_splitter=RecursiveCharacterTextSplitter(chunk_size=100, chunk_overlap=15)
+#     ).from_loaders([pdf_loader])
 
 # Define a system prompt to set the context for the chatbot
 system_prompt = "You are an AI chatbot trained to answer questions in the healthcare domain based on relevant context. If the question is out of the healthcare domain, respond with relevant context but indicate subtly: ***>>>NOTE: THIS QUESTION MIGHT BE OUT OF MY DOMAIN!<<<***\n"
